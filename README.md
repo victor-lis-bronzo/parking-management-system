@@ -1,18 +1,64 @@
-## Getting Started
+# 🅿️ Sistema de Gerenciamento de Estacionamento
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Um aplicativo Java interativo para gerenciar um estacionamento, permitindo cadastrar veículos, registrar saídas, listar veículos e calcular fretamento.
 
-## Folder Structure
+## 📋 Funcionalidades
 
-The workspace contains two folders by default, where:
+- **Cadastrar Veículo**: Registre novos veículos com placa, modelo e valor por hora
+- **Sair Veículo**: Remova um veículo do estacionamento pela placa
+- **Listar Veículos**: Visualize todos os veículos cadastrados
+- **Calcular Fretamento**: Calcule o valor estimado baseado no número de horas
+- **Menu Interativo**: Interface simples e intuitiva via terminal
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## 📁 Estrutura de Pastas
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+```
+parking-lot-system-management/
+├── src/                    # Código-fonte Java
+│   ├── App.java           # Classe principal com menu interativo
+│   ├── Estacionamento.java # Gerenciador do estacionamento
+│   └── Veiculo.java       # Classe que representa um veículo
+├── bin/                   # Arquivos compilados (.class)
+├── lib/                   # Dependências externas
+└── README.md             # Este arquivo
+```
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## 🚀 Como Compilar e Executar
 
-## Dependency Management
+### Compilação
+```bash
+javac -d bin src/*.java
+```
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+### Execução
+```bash
+java -cp bin App
+```
+
+## 📦 Classes Principais
+
+### `Veiculo.java`
+Representa um veículo com os seguintes atributos:
+- `placa` (String): Identificador único do veículo
+- `modelo` (String): Modelo do veículo
+- `valorHora` (float): Valor cobrado por hora de permanência
+
+### `Estacionamento.java`
+Gerencia a coleção de veículos com métodos para:
+- Adicionar novo veículo
+- Remover veículo pela placa
+- Listar todos os veículos
+- Calcular faturamento estimado
+
+### `App.java`
+Aplicação principal que oferece um menu interativo com 5 opções:
+1. Cadastrar Veículo
+2. Sair Veículo
+3. Listar Veículos
+4. Calcular Fretamento
+5. Sair do programa
+
+## ⚙️ Requisitos
+
+- Java 11 ou superior
+- VS Code com extensão Language Support for Java (Red Hat)
